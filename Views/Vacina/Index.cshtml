@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProjetoVacina.Models.Vacina>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VacinaNome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VacinaDescricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicacaoGenero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicacaoIdade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VacinaNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VacinaDescricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndicacaoGenero.IndicacaoGeneroId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndicacaoIdade.IndicacaoIdadeId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VacinaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.VacinaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.VacinaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

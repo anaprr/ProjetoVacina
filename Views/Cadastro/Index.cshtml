@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ProjetoVacina.Models.Cadastro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CadastroCpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CadastroEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CadastroSenha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CadastroGenero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CadastroDiaNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CadastroMesNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CadastroAnoNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FrequenciaVacina)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CadastroCpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CadastroEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CadastroSenha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CadastroGenero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CadastroDiaNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CadastroMesNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CadastroAnoNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FrequenciaVacina.FrequenciaVacinaId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CadastroId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CadastroId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CadastroId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

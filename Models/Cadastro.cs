@@ -26,7 +26,7 @@ namespace ProjetoVacina.Models
 
         [Column("CadastroGenero")]
         [Display(Name = "Gênero")]
-        public int CadastroGenero { get; set; }
+        public string CadastroGenero { get; set; } = string.Empty;
 
         [Column("CadastroDiaNascimento")]
         [Display(Name = "Dia do Nascimento")]
