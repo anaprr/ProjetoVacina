@@ -1,9 +1,18 @@
+using ProjetoVacina.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+
+builder.Services.AddDbContext<Contexto>
+    (options => options.UseSqlServer("Data Source=SP-1491024\\SQLSENAI;Initial Catalog=ProjetoVacina;Integrated Security = True;TrustServerCertificate = True"));
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
